@@ -1,0 +1,15 @@
+1. Create a dropdown menu using html and css
+*use: hover to reveal the submenu
+*style the submenu with background and borders 
+*ensure the menu works horizontally
+
+
+2.create a grid of images where:
+*on hover a caption text appears over the image
+*use position absolute,opacity and trasition for the overlay effect.
+
+3.
+create a layout with:
+* A left sidebar(25%) and a main content area(75%)
+*use flexbox to align them horizontally
+*make it responsive(stacked vertically on small screens)

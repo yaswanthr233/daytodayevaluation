@@ -1,0 +1,76 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 200px,1fr);
+    grid-row: repeat(10, 100px,1fr);
+}
+
+.navbar {
+    grid-column: 1/12;
+    grid-row: 1/3;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid #000000;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #000000;
+    font-size: 24px;
+    margin-left:10px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    
+    padding: 0;
+}
+
+li{
+    margin-right: 12px;
+    margin-top:4px;
+    cursor:pointer;
+}
+
+.aboutus{
+    grid-column: 1/12;
+    grid-row: 8/11;
+    background-color: #edff63;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    
+}
+
+.content{
+    grid-column: 1/12;
+    grid-row: 3/8;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.aboutus_heading {
+    font-size: 24px;
+    color: #333333;
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 10px;
+
+}
+
+.aboutus_para {
+    font-size: 14px;
+    color: #000000;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;;
+    font-family: Arial, Helvetica, sans-serif;
+}

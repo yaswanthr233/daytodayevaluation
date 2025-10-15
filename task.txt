@@ -1,0 +1,22 @@
+1. Create a horizontal menu using unordered list:
+remove list bullets
+display items horizontally
+add padding and background color
+
+2.cREATE A div tag with some text inside and apply
+margin:10px
+padding:20px
+border:2px solid black
+background-color: lightyellow
+
+
+3.create a flex box layout use flexbox to create layout with three boxes side-by-side
+center the boxes
+add spacing between them
+set equal width and height
+
+
+4. Button hover effects
+Create a styled button and apply
+Background-color change on hover
+Scale-up transition effect

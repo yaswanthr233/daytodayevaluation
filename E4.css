@@ -1,0 +1,27 @@
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding:8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #54d92c;
+}
+button:hover{
+    background-color: #3a2cd9;
+    color: white;
+    padding: 10px;
+    border-width: 0px;
+    border-radius: 7px;
+    cursor:pointer;
+    transform: scale(1.2);
+
+}

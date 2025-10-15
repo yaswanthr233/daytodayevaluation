@@ -1,0 +1,21 @@
+.heading{
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    margin-top: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    width: 80%;
+}
+.bg-container{
+    background-color: rgb(18, 150, 245);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    
+}

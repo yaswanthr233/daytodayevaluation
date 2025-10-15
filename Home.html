@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yaswanth</title>
+    <link rel="stylesheet" href="c.css">
+    
+</head>
+<body>
+    <div class="bg-container">
+        <div class="bg">
+            <h1>Studnet Details</h1>
+            <hr>
+        
+            <form id="form" onsubmit="return displayData()">
+            <table>
+                <tr>
+                <td>
+                    <p class="p-field">Full Name </p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="f-name" class="input-field" >
+                        <p for="name" class="input-label">First Name</p>
+                    </td>
+                    <td>
+                        <input type="text" id="surname" class="input-field" >
+                        <p for="surname" class="input-label">Last Name</p>
+                    </td>
+                </tr>
+                <td>
+                    <p class="p-field">Father Name </p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="ff-name" class="input-field" >
+                        <p for="name" class="input-label">Father Name</p>
+                    </td>
+                    <td>
+                        <input type="text" id="f-surname" class="input-field">
+                        <p for="surname" class="input-label">Last Name</p>
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                    <p class="p-field">Gender </p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="gender" class="input">
+                        <label class="input-label-radio">Male</label>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" id="gender" class="input1">
+                        <label class="input-label-radio">Female</label>
+                    </td>
+                </tr>
+                
+                <tr>
+                <td>
+                    <p class="p-field">Date Of Birth </p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="date" id="dob" class="input-field-address" max="2006-08-06" min="1947-01-01">
+                        <p for="dob" class="input-label">Date of Birth</p>
+                    </td>
+                </tr>
+
+
+                <tr>
+                <td>
+                    <p class="p-field">Address </p>
+                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="address" class="input-field-address">
+                        <p for="name" class="input-label">Street Address 1</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="address1" class="input-field-address">
+                        <p for="name" class="input-label">Street Address 2</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="city" class="input-field">
+                        <p for="name" class="input-label">City</p>
+                    </td>
+                    <td>
+                        <input type="text" id="state" class="input-field">
+                        <p for="name" class="input-label">State</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input  type="number" id="postal-code" min="500000" max="599999" class="input-field-address">
+                        <p for="name" class="input-label">Postal Code</p>
+                    </td>
+                </tr>
+            
+            <div>
+                    <tr>
+                        <td><input style="margin-left: -80px;" class="r-box" type="reset" id="reset"></td>
+                        <td><input class="s-box" type="submit" id="submit"></td>
+                    </tr>
+                    
+                </div>
+            </table>
+            </form>
+        </div>
+        <div class="bg b1">
+            <div id="result" class="result" style="display: none;">
+            <h3>Submitted Details</h3>
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Gender:</strong> <span id="gender"></span></p>
+      <p><strong>Course:</strong> <span id="course"></span></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      // Get form values
+      const name = document.getElementById('f-name').value;
+      const email = document.getElementById('email').value;
+      const gender = document.getElementById('gender').value;
+      const course = document.getElementById('course').value;
+
+      // Display results
+      document.getElementById('f-name').textContent = name;
+      document.getElementById('email').textContent = email;
+      document.getElementById('gender').textContent = gender;
+      document.getElementById('course').textContent = course;
+
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+        </div>
+       </div> 
+    
+</body>
+</html>

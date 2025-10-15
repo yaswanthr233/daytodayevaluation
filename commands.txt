@@ -1,0 +1,9 @@
+textarea for unlimited text
+method,action and target
+
+Nodejs:
+MERN:(new)
+MEAN:(old)
+
+
+npm create vite@latest myreactapp(project/application name)

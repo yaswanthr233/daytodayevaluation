@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🌾 Smart Farmer AI Assistant (Free)</title>
+<style>
+body { font-family: Arial; background: #f2f9f2; text-align: center; }
+#chat { width: 450px; height: 400px; border: 1px solid #ccc; margin: auto; padding: 10px; overflow-y: auto; background: #fff; }
+.msg { margin: 5px; padding: 8px; border-radius: 8px; text-align: left; }
+.user { background: #d1f0d1; }
+.bot { background: #f9f9f9; }
+button { padding: 8px; margin: 5px; }
+select, input { padding: 5px; margin: 5px; }
+#chatInput { width: 250px; }
+</style>
+</head>
+<body>
+<h2>🌾 Smart Farmer Voice AI Assistant</h2>
+
+<select id="langSelect">
+  <option value="te">Telugu</option>
+  <option value="hi">Hindi</option>
+  <option value="ta">Tamil</option>
+  <option value="kn">Kannada</option>
+  <option value="en">English</option>
+</select>
+
+<div id="chat"></div>
+
+<div>
+  <input type="text" id="chatInput" placeholder="Type your question here" />
+  <button id="sendBtn">Send</button>
+</div>
+
+<div>
+  <button id="weatherBtn">🌦 Weather</button>
+  <button id="cropBtn">🌱 Crop Advice</button>
+  <button id="marketBtn">💰 Market Price</button>
+  <button id="pestBtn">🐛 Pest Control</button>
+  <button id="voiceBtn">🎤 Speak</button>
+</div>
+
+<script>
+// Chat elements
+const chat = document.getElementById("chat");
+const langSelect = document.getElementById("langSelect");
+const chatInput = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+const weatherBtn = document.getElementById("weatherBtn");
+const cropBtn = document.getElementById("cropBtn");
+const marketBtn = document.getElementById("marketBtn");
+const pestBtn = document.getElementById("pestBtn");
+const voiceBtn = document.getElementById("voiceBtn");
+
+function addMessage(text, sender){
+  let div = document.createElement("div");
+  div.className = "msg " + sender;
+  div.innerText = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// LibreTranslate
+async function translate(text, source, target){
+  const resp = await fetch("https://libretranslate.com/translate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ q:text, source:source, target:target, format:"text" })
+  });
+  const data = await resp.json();
+  return data.translatedText;
+}
+
+// Smart AI logic (keyword-based)
+function smartResponse(text){
+  text = text.toLowerCase();
+  if(text.includes("weather")) return "Today the weather is sunny with light showers in some regions.";
+  if(text.includes("crop")) return "Ensure proper irrigation and use organic fertilizers for better yield.";
+  if(text.includes("market")) return "Tomato is ₹30/kg and rice is ₹45/kg in the local market today.";
+  if(text.includes("pest")) return "Use neem oil or natural pesticides to control pests safely.";
+  return "Sorry, I can help with weather, crops, market prices, or pest control.";
+}
+
+// Get AI response with translation and TTS
+async function getAIResponse(userText){
+  const targetLang = langSelect.value;
+
+  try{
+    // Translate user input to English if needed
+    let textInEnglish = targetLang !== "en" ? await translate(userText, targetLang, "en") : userText;
+
+    // Get smart response
+    let aiReply = smartResponse(textInEnglish);
+
+    // Translate back to target language
+    let finalReply = targetLang !== "en" ? await translate(aiReply, "en", targetLang) : aiReply;
+
+    addMessage(finalReply, "bot");
+
+    // Speak reply
+    let utter = new SpeechSynthesisUtterance(finalReply);
+    utter.lang = targetLang === "en" ? "en-US" : targetLang;
+    speechSynthesis.speak(utter);
+  } catch(err){
+    addMessage("Error generating AI response.", "bot");
+    console.error(err);
+  }
+}
+
+// Send from input
+sendBtn.addEventListener("click", async ()=>{
+  let text = chatInput.value.trim();
+  if(text==="") return;
+  addMessage(text, "user");
+  chatInput.value="";
+  await getAIResponse(text);
+});
+
+// Quick buttons
+weatherBtn.addEventListener("click", ()=>sendQuick("Weather forecast"));
+cropBtn.addEventListener("click", ()=>sendQuick("Crop advice"));
+marketBtn.addEventListener("click", ()=>sendQuick("Market price"));
+pestBtn.addEventListener("click", ()=>sendQuick("Pest control tips"));
+function sendQuick(text){
+  addMessage(text, "user");
+  getAIResponse(text);
+}
+
+// Voice input
+voiceBtn.addEventListener("click", startListening);
+function startListening(){
+  const recognition = new(window.SpeechRecognition || window.webkitSpeechRecognition)();
+  recognition.lang = langSelect.value;
+  recognition.start();
+
+  recognition.onresult = async function(event){
+    let userText = event.results[0][0].transcript;
+    addMessage(userText, "user");
+    await getAIResponse(userText);
+  };
+}
+</script>
+</body>
+</html>

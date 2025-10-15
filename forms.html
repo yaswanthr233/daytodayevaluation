@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample form</title>
+    <link rel="stylesheet" href="f.css">
+</head>
+<body>
+    <div>
+        <h1>Fill the Form</h1>
+    </div>
+    <div class="pd">
+        <h1>Personal Details</h1>
+    </div>
+<div class="bg">
+<form action="#" method="get" target="_blank">
+    <table>
+        <tr>
+            <td><label class="l">First Name: </label></td>
+            <td><input class="c" type="text" name="first_name"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Last Name:</label></td>
+            <td><input class="c" type="text" name="last_name"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Address: </label></td>
+            <td><textarea class="c" rows="3" cols="20"></textarea></td>
+        </tr>
+        <tr>
+            <td><label class="l" name="password">Password: </label></td>
+            <td><input class="c" type="password" name="pwd"></td>
+        </tr>
+        <tr>
+            <td><p class="l">Gender: </p></td>
+            <td>
+                <input type="radio" class="c" name="gender">
+                <label for="male" class="c">Male</label>
+                <input type="radio" name="gender">
+                <label for="female" name="gender">Female</label>
+            </td>
+        <tr>
+            <td><p class="l">Choose your favourite language: </p></td>
+            <td>
+                <input type="radio" name="language">
+                <label for="html">HTML</label><br>
+                <input type="radio" name="language">
+                <label for="css">CSS</label><br>
+                <input type="radio" name="language">
+                <label for="javascript">JavaScript</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="l">Email :</label>
+            </td>
+            <td><input type="email" class="c" name="email"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Hobbies: </label></td>
+            <td>
+                <input type="checkbox" name="hb">
+                <label for="reading">Reading</label>
+                <input type="checkbox" name="hb"><label for="travelling">travelling</label>
+                <input type="checkbox" name="hb"><label for="gaming">Gaming</label>
+            
+                <input type="checkbox" name="hb"><label for="cooking">Cooking</label>
+            </td>
+
+        </tr>
+        <tr>
+            <td><input type="submit" value="submit"></td>
+            <td><input type="reset" value="reset"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="alert('Hello World!')" value="Click me"></td>
+        </tr>
+        <tr>
+            <td>
+                <label class="l">Choose your favourite color: </label>
+            
+            </td>
+            <td><input type="color" name="fc"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Date of birth</label></td>
+            <td><input type="date" name="dob" max="2006-08-06" min="1947-01-01"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Date and Time</label></td>
+            <td><input type="datetime-local" name="dt"></td>
+        </tr>
+        <tr>
+            <td><lable class="l">Select file:</lable></td>
+            <td><input type="file" name="file"></td>
+        </tr>
+        <tr>
+            <td class="l">Hidden Fields</td>
+            <td><input type="hidden" id="cust" name="cust" value="1154"></td>
+        </tr>
+        <tr>
+            <td><lable class="l">Month and Year</lable></td>
+            <td><input type="month" name="m"></td>
+        </tr>
+        <tr>
+            <td><label class="l">Enter age:</label></td>
+            <td><input type="number" max="60" min="18"></td>
+        </tr>
+        <tr>
+            <td class="l">Country: </td>
+            <td>
+                <select>
+                    <option value="india">India</option>
+                    <option value="america">America</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><lable class="l">Sample image</lable></td>
+            <td><img src="https://res.cloudinary.com/duokznlha/image/upload/v1749364105/PicRetouch_20250608_104524131_buuqji.png" style="height:200px; width:150px;"></td>
+        </tr>
+        <tr>
+            <td class="l">Option Group : </td>
+            <td>
+                <select>
+                    <optgroup label="Mobiles">
+                        <option value="apple">Redmi</option>
+                        <option value="banana">Apple</option>
+                        <option value="orange">Realme</option>
+                        </optgroup>
+                    <optgroup label="Laptops">
+                        <option value="carrot">Hp</option>
+                        <option value="broccoli">Lenovo</option>
+                        <option value="spinach">Asus</option>
+                </select>
+            </td>
+        </tr>
+
+</table>
+</div>
+</body>
+
+</form>
+</html>

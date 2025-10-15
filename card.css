@@ -1,0 +1,103 @@
+body{
+    padding:0px;
+    margin:0px;
+}
+.bg{
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.card{
+    background-color: #ffffff;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    padding-bottom:40px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+}
+
+.card-header{
+    background-color: blue;
+    height:120px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+img{
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    border-color: rgb(248, 247, 249);
+    border-width: 4px;
+    border-style: solid;
+    margin-top:2px;
+}
+
+.h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight:700;
+}
+
+.p{
+    font-family:"Roboto", sans-serif;
+    margin-top:1px;
+}
+
+.h{
+    text-align: center;
+    font-family: "Roboto";
+    margin-top: 0px;
+}
+
+i{
+    background-color: rgb(216, 46, 205);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    justify-content: row;
+    cursor:pointer;
+}
+
+.fa-youtube{
+    background-color: red;
+    margin-left:10px;
+
+}
+
+.fa-snapchat{
+    background-color: yellow;
+    margin-left:10px;
+}
+
+.fa-facebook{
+    background-color: rgb(62, 11, 244);
+    margin-left:10px;
+}
+
+.btn{
+   background-color: blue;
+   border-width:0px;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family:"Sans-serif";
+    font-size:15px;
+    width:120px;
+    cursor: pointer;
+}

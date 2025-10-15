@@ -1,0 +1,19 @@
+
+.dropdown li{
+    position: relative;
+    list-style: none;
+}
+
+.sub-menu{
+    display: none;
+    position: absolute;
+    background: white;
+}
+
+.dropdown li:hover .sub-menu{
+    display: block;
+}
+
+.main-menu{
+    width: 200px;
+}
